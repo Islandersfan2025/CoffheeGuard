@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coffhee Access</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+           display:flex; align-items:center; justify-content:center; min-height:100vh;
+           background:#000000; margin:0; }
+    .card { background:lightgreen; padding:24px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.08);
+           width: 420px; max-width:95%; text-align:center; }
+    input { width:100%; padding:10px 12px; margin-top:12px; border-radius:8px; border:1px solid #ddd; font-size:1rem; }
+    button { margin-top:12px; padding:10px 14px; border-radius:8px; border:none; background:#4b2e05; color:white; cursor:pointer; font-size:1rem; }
+    #msg { margin-top:12px; min-height:1.2em; color:#b00020; }
+    #result { margin-top:16px; display:none; }
+    a.big { display:inline-block; padding:10px 14px; border-radius:8px; background:#0b63ff; color:white; text-decoration:none; }
+    small.hint { color:#666; display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>FHE Guarded Exchange</h2>
+    <p>Enter the access key to reveal the exchange URL.</p>
+
+    <input id="accessKey" type="password" placeholder="Enter access key" autocomplete="off" />
+    <button id="checkBtn">Reveal URL</button>
+
+    <div id="msg"></div>
+
+    <div id="result">
+      <p>URL revealed:</p>
+      <a id="exchangeLink" class="big" href="#" target="_blank" rel="noopener noreferrer">Open Exchange</a>
+      <div style="margin-top:8px;">
+        <button id="copyBtn">Copy URL</button>
+        <small class="hint">Correct key: <em>(hidden)</em></small>
+      </div>
+    </div>
+
+    <small style="display:block;margin-top:12px;color:#666">This is the our community exchange, V1 coming soon!</small>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
